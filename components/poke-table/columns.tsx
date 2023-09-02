@@ -6,6 +6,9 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
     DataTableColumnHeader
 } from "@/components/poke-table/data-table-column-header";
+import {
+    DataTableRowActions
+} from "@/components/poke-table/data-table-row-actions";
 
 export const columns: ColumnDef<Pokemon>[] = [
     {
@@ -66,5 +69,9 @@ export const columns: ColumnDef<Pokemon>[] = [
     {
         accessorKey: "id",
         header: "ID",
+    },
+    {
+        id: "actions",
+        cell: ({ row }) => <DataTableRowActions row={row?.original?.id} />,
     },
 ]
